@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examination</title>
+    <title>Thank You</title>
 </head>
 <body>
 
@@ -18,17 +18,8 @@
     {% endfor %}
 
 
-    <h3>Examination is about to start</h3>
+    <h3>Hope you have good experience</h3>
 
-    {% if user.is_authenticated %}
-    <h3>Hello {{name}}</h3>
-    <h4>You're going to start the examination</h4>
-
-    <button type="submit"> <a href="/exampage"> Start Examination </a> </button>
-    <button type="submit"> <a href="/signout"> SignOut </a> </button>
-    {% else %}
-    <button type="submit"> <a href="/signup"> SignUp </a> </button>
-    <button type="submit"> <a href="/signin"> SignIn </a> </button>
-    {% endif %}
+    <button type="submit"> <a href="/signout"> SignOut </a></button>
 </body>
 </html>

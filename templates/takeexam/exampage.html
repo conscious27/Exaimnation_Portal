@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Page</title>
+</head>
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message}}
+        <button type = "button" class="close" data-dissmiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+
+    <h3>Complete the exam in 10 minute</h3>
+
+    <form action="/exampage" method="post"> 
+        {% csrf_token %}
+        <label for="q1">Question 1: What is photosynthesis?</label>
+        <br>
+        <textarea id="a1" name="a1" placeholder="Write the answer" rows="10" cols="50"></textarea>
+
+        <br>
+        <label for="q2">Question 2: How to stop water wastage??</label>
+        <br>
+        <textarea id="a2" name="a2" placeholder="Write the answer" rows="10" cols="50"></textarea>
+
+        <br>
+        <label for="q3">Question 3: Tell the meaning of autofocus?</label>
+        <br>
+        <textarea id="a3" name="a3" placeholder="Write the answer" rows="10" cols="50"></textarea>
+
+        <br>
+        <label for="q4">Question 4: Describe computer.</label>
+        <br>
+        <textarea id="a4" name="a4" placeholder="Write the answer" rows="10" cols="50"></textarea>
+
+        <br>
+        <label for="q5">Question 5. Why does the rainbow appear?</label>
+        <br>
+        <textarea id="a5" name="a5" placeholder="Write the answer" rows="10" cols="50"></textarea>
+
+        <br>
+        <label for="q6">Question 6: When the previous super volcano erupted? Explain in detail.</label>
+        <br>
+        <textarea id="a6" name="a6" placeholder="Write the answer" rows="10" cols="50"></textarea>
+
+        <br>
+        <label for="q7">Question 7: Who are the main actors behind first and second world war?</label>
+        <br>
+        <textarea id="a7" name="a7" placeholder="Write the answer" rows="10" cols="50"></textarea>
+
+        <br>
+        <label for="q8">Question 8. Explain the steps of reducing the cancer cells in human body.</label>
+        <br>
+        <textarea id="a8" name="a8" placeholder="Write the answer" rows="10" cols="50"></textarea>
+
+        <br>
+        <label for="q9">Question 9: Counter the sentence "Offence is best defence".</label>
+        <br>
+        <textarea id="a9" name="a9" placeholder="Write the answer" rows="10" cols="50"></textarea>
+
+        <br>
+        <label for="q10">Question 10. Where are all the wonders of the worlds are located?</label>
+        <br>
+        <textarea id="a10" name="a10" placeholder="Write the answer" rows="10" cols="50"></textarea>
+
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

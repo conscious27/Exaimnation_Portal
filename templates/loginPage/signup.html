@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message}}
+        <button type = "button" class="close" data-dissmiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    
+    <h1> Sign Up </h1>
+
+    <form action="/signup" method="post"> 
+        {% csrf_token %}
+        <label for="">Name</label>
+        <input type="text" id="Name" name="Name" placeholder="Enter your Name: " Required>
+
+        <br>
+        <label for="">Age</label>
+        <input type="number" id="Age" name="Age" placeholder="Enter your Age: " Required>
+
+        <br>
+        <label for="">University</label>
+        <input type="text" id="University" name="University" placeholder="Enter your University: " Required>
+        
+        <br>
+        <label for="">Branch</label>
+        <input type="text" id="name" name="Branch" placeholder="Enter your Branch: " Required>
+
+        <br>
+        <label for="">Stream</label>
+        <input type="text" id="Stream" name="Stream" placeholder="Enter your Stream: " Required>
+
+        <br>
+        <label for="">E-mail</label>
+        <input type="email" id="Email" name="Email" placeholder="Enter your Email: " Required>
+
+        <br>
+        <label for="">Phone</label>
+        <input type="text" id="Phone" name="Phone" placeholder="Enter your Phone Number: " Required>
+        
+        <br>
+        <label for="">Username</label>
+        <input type="text" id="Username" name="Username" placeholder="Enter Username: " Required>
+
+        <br>
+        <label for="">Password</label>
+        <input type="password" id="Password" name="Password" placeholder="Enter Password: " Required>
+
+        <br>
+        <label for="">Confirm Password</label>
+        <input type="password" id="Password2" name="Password2" placeholder="Confirm Password: " Required>
+
+        <br>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +22,11 @@
 
     <h3>Complete the exam in 10 minute</h3>
 
+    <div align="right " id="displaytimer"><b>Timer: 0 seconds</b></div>
+
     <form action="/exampage" method="post"> 
         {% csrf_token %}
+
         <label for="q1">Question 1: What is photosynthesis?</label>
         <br>
         <textarea id="a1" name="a1" placeholder="Write the answer" rows="10" cols="50"></textarea>
@@ -72,8 +77,29 @@
         <textarea id="a10" name="a10" placeholder="Write the answer" rows="10" cols="50"></textarea>
 
         <br>
-        <button type="submit">Submit</button>
+        <button type="submit" id="submit1">Submit</button>
     </form>
+
+    {% block script %}
+    <script>
+
+        console.log('hello world')
+        const timer=document.getElementById('displaytimer')
+        console.log(timer.textContent)
+        const inputtag = document.getElementById('timer')
+
+        t=0
+        setInterval(()=>{
+            t+=1
+
+            if(t==60){
+                document.getElementById('submit1').click()
+            }
+            timer.innerHTML ="<b>Timer: " +t+" seconds</b>"
+            inputtag.value = t
+        },1000)
+    </script>
+{% endblock script %}
 
 </body>
 </html>
